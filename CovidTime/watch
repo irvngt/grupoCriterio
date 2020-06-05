@@ -1,0 +1,3 @@
+#!/bin/bash
+
+sass --watch style/style.scss:style.css

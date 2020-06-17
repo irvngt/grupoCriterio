@@ -1,16 +1,19 @@
 @import url("https://use.typekit.net/ikb8nck.css");
 
 @import 'reset';
-@import 'sections';
 
 body,html{
     font-family: garamond-premier-pro, serif;
     font-weight: 500;
     font-style: normal;
     // background: #F6F6F6;
-     background:  #f8f7f8;
-    
+    background:  #f8f7f8;
     scroll-behavior: smooth;
+    &.showmenu{
+        .nav_covid{
+            transform: none;
+        }
+    }
 }
 a, a:hover, a:link, a:visited{
     color: inherit;
@@ -30,3 +33,4 @@ a, a:hover, a:link, a:visited{
     position: relative;
     overflow: hidden;
 }
+@import 'sections';

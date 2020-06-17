@@ -10,6 +10,7 @@
 		<script src="./anime.min.js"></script>
 		<script src="./funcs.js"></script>
 		<script src="./main.js"></script>
+
 		<!--TO ADD-->
 		<meta name="keywords" content="COVID-19, méxico, linea del tiempo, animal politico, timeline covid, covid méxico, animal mx,"/>
 		<meta name="description" content="Linea del tiempo covid-19 en México"/>
@@ -48,14 +49,41 @@
 	<body>
 		<div id="wrapper">
 			<div id="container">
+
+				<nav class="nav_covid" id="menuToggle" role="navigation">
+					<div class="nav_covid_menu" >
+						<input type="checkbox" />
+						<span></span>
+						<span></span>
+						<span></span>
+						<ul class="nav_covid_menu_ul" id="menu">
+							<a href="#intro"><li>PRIMEROS CASOS</li></a>
+							<a href="#date-2"><li>SUSPENSIÓN DE CLASES</li></a>
+							<a href="#date-3"><li>PRIMERA MUERTE</li></a>
+							<a href="#date-4"><li>SUSANA DISTANCIA</li></a>
+							<a href="#date-5"><li>INICIA FASE 2</li></a>
+							<a href="#date-6"><li>MEDIDAS EXTREMAS EN ESTADOS</li></a>
+							<a href="#date-7"><li>INICIA EMERGENCIA SANITARIA</li></a>
+							<a href="#date-8"><li>CIERRAN PLAZAS COMERCIALES</li></a>
+							<a href="#date-9"><li>CERCAN CALLES</li></a>
+							<a href="#date-10"><li>FALTA DE INSUMOS MÉDICOS</li></a>
+							<a href="#date-11"><li>MEXICANOS MUERTOS EN EU</li></a>
+							<a href="#date-12"><li>ATAQUES CONTRA PERSONAL MÉDICO</li></a>
+							<a href="#date-13"><li>INICIA FASE 3</li></a>
+						</ul>
+					</div>
+					<div class="nav_covid_logo"></div>
+				</nav>
+
 				<!-- Inicio -->
 				<section id="inicio">
-				<div id="lineDrawing"> <svg viewBox="0 0 270 200" >
-						<g fill="none" fill-rule="evenodd" stroke="#ffd8cc" stroke-width=".8" class="lines">
-							<path d="M268.5 0 L269 200 z" stroke-dasharray="500"/>
-						</g>
-					</svg> 
-				</div>
+					<div id="lineDrawing">
+						<svg viewBox="0 0 270 170" >
+							<g fill="none" fill-rule="evenodd" stroke="#ffd8cc" stroke-width=".8" class="lines">
+								<path d="M268.5 0 L269 170 z" stroke-dasharray="500"/>
+							</g>
+						</svg> 
+					</div>
 					<h1 id="inicio-data">
 						<div id="inicio-data-covid">COVID-19</div>
 						<div  id="inicio-data-mex">MÉXICO</div>
@@ -334,7 +362,19 @@
           delay: function(el, i) { return i * 500 },
           
           // loop: true
-    });
-    </script>
+		});
+		
+		
+		</script>
+		<script>
+function myFunction() {
+  var x = document.getElementById("myLinks");
+  if (x.style.display === "block") {
+    x.style.display = "none";
+  } else {
+    x.style.display = "block";
+  }
+}
+</script>
 	</body>
 </html>

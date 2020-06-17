@@ -37,6 +37,9 @@ function onSectionVisible(id){
         case"date-8":
             animeteDate8();
         break;
+        case"date-9":
+            animeteDate9();
+        break;
     }
 }
 
@@ -103,19 +106,13 @@ function animateInicio(){
     
     let textWrapper = document.querySelector('#inicio-data-mex');
     textWrapper.innerHTML = textWrapper.textContent.replace(/\S/g, "<span class='letter'>$&</span>");
-    anime.timeline({loop:true})
+    anime.timeline({loop:false})
     .add({
         targets: '#inicio-data-mex .letter',
         opacity: [0,1],
         easing: "easeInOutQuad",
         duration: 2250,
         delay: (el, i) => 150 * (i+1)
-    }).add({
-        targets: '#inicio-data-mex',
-        opacity: 0,
-        duration: 1000,
-        easing: "easeOutExpo",
-        delay: 1000
     })
 
 }
@@ -201,24 +198,22 @@ function animeteDate3(){
     anime_intro_des = anime({
         targets: '#date-3-data-des',
         opacity: [0, 1],
-        delay: 1400,
-        easing: 'easeOutBack',
-        duration: 1200,
-        translateY: ['25%', 0]
+        delay: 500,
+        easing: 'easeInOutQuart',
+        duration: 1800,
+        translateY: ['5%', 0]
     })
     anime_intro_des = anime({
         targets: '#date-3-data-txt',
         opacity: [0, 1],
-        delay: 1500,
-        easing: 'easeInOutBack',
-        duration: 1200,
-        translateY: ['50%', 0]
+        delay: 500,
+        easing: 'easeInOutQuart',
+        duration: 1800,
+        translateY: ['15%', 0]
     })  
 }
 
 function animeteDate4(){
-
-
     let textWrapper_des = document.querySelector('#date-4-data-des');
     textWrapper_des.innerHTML = textWrapper_des.textContent.replace(/\S/g, "<span class='letter_des'>$&</span>");
 
@@ -227,7 +222,7 @@ function animeteDate4(){
         translateX: [100,0],
         translateZ: 0,
         opacity: [0,1],
-        easing: "easeOutExpo",
+        easing: "easeInCirc",
         duration: 1000,
         delay: (el, i) => 500 + 10 * i
     });
@@ -240,33 +235,30 @@ function animeteDate4(){
         translateX: [40,0],
         translateZ: 0,
         opacity: [0,1],
-        easing: "easeOutExpo",
-        duration: 1200,
-        delay: (el, i) => 500 + 30 * i
+        easing: "easeInCirc",
+        duration: 500,
+        delay: (el, i) => 100 + 10 * i
     });
 
 }
 
 function animeteDate5(){
-
-   
-    
     anime.timeline({loop: false})
     .add({
         targets: '#date-5-data #date-5-data-title',
-        scale: [5,1],
+        scale: [1.5,1],
         opacity: [0,1],
-        easing: "easeOutCirc",
+        easing: "linear",
         duration: 1600,
         delay: (el, i) => 1600 * i
     })
     .add({
         targets: '#date-5-data #date-5-data-des',
-        scale: [4,1],
+        scale: [1.5,1],
         opacity: [0,1],
-        easing: "easeOutCirc",
-        duration: 1700,
-        delay: (el, i) => 1700 * i
+        easing: "linear",
+        duration: 1500,
+        delay: (el, i) => 1500 * i
     })
 }
 
@@ -283,7 +275,7 @@ function animeteDate6(){
     .add({
         targets: '#date-6-data .letter',
         rotateY: [-90, 0],
-        duration: 1300,
+        duration: 100,
         delay: (el, i) => 45 * i
     })
 }
@@ -354,19 +346,46 @@ function animeteDate8(){
     });  
 }
 
-// var textWrapper = document.querySelector('#inicio-data-mex');
-// textWrapper.innerHTML = textWrapper.textContent.replace(/\S/g, "<span class='letter'>$&</span>");
-// anime.timeline({loop: true})
-// .add({
-//     targets: '#inicio-data-mex .letter',
-//     opacity: [0,1],
-//     easing: "easeInOutQuad",
-//     duration: 2250,
-//     delay: (el, i) => 150 * (i+1)
-// }).add({
-//     targets: '#inicio-data-mex',
-//     opacity: 0,
-//     duration: 1000,
-//     easing: "easeOutExpo",
-//     delay: 1000
-// })
+
+function animeteDate9(){
+    anime_intro_title = anime({
+        targets: '#date-9-data-title',
+        opacity: [0, 1],
+        delay: 500,
+        easing: 'linear',
+        duration: 800,
+        translateY: ['-25%', 0]
+    })
+
+    anime_intro_des = anime({
+        targets: '#date-9-data-des',
+        opacity: [0, 1],
+        delay: 1400,
+        easing: 'linear',
+        duration: 800,
+        translateY: ['25%', 0]
+    })
+
+
+    anime_img_date2 = anime({
+        targets: '#date-9-data-txt',
+        opacity: [0, 1],
+        delay: 1400,
+        easing: 'linear',
+        duration: 800,
+        translateY: ['29%', 0]
+
+    })   
+}
+
+onscroll();
+$(window).scroll(function(){
+    onscroll();
+}) 
+
+  
+function onscroll(){
+    var h = $(window).height();
+    var ot = $(window).scrollTop();
+    $('body').toggleClass('showmenu', ot > h*1); 
+}

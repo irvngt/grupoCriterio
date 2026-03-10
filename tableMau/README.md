@@ -1,1 +1,1 @@
-# Table in react js for @lopsum
+# Table in react js
